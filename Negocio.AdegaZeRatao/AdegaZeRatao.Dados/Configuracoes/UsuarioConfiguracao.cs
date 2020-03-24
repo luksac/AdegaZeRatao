@@ -13,7 +13,7 @@ namespace AdegaZeRatao.Dados.Configuracoes
     {
         public void Configure(EntityTypeBuilder<Usuario> builder)
         {
-            builder.ToTable("Usuario");
+            builder.ToTable("Usuario" , "LUCAS_PAULOVICTOR");
 
             builder.HasKey("idUsuario");
 

@@ -6,11 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AdegaZeRatao.Dados.Configuracoes;
+using AdegaZeRatao.Dominios;
 
 namespace AdegaZeRatao.Dados
 {
-    public class Contexto
-    {
+
+
+    public class Contexto : DbContext { 
+    
         //1. CLASSES - ENTIDADES - TABELAS
         //1. INICIO
         public DbSet<Usuario> Usuario { get; set; }

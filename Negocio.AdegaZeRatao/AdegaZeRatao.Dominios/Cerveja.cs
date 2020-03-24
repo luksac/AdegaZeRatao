@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace AdegaZeRatao.Dominios
 {
@@ -10,5 +11,11 @@ namespace AdegaZeRatao.Dominios
         public int IdDetalhes { get; set; }
         public string Categoria { get; set; }
         public string Tipo { get; set; }
+
+        public bool Validar()
+        {
+            var listaDeCervejasHabilitadas = new[] { "Brahma", "Skol", "Devassa" };
+            return listaDeCervejasHabilitadas.Contains(Categoria);
+        }
     }
 }
