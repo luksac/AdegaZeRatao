@@ -1,8 +1,9 @@
 ﻿using System;
 using AdegaZeRatao.Dominios;
 using AdegaZeRatao.Dados;
+using System.Collections.Generic;
 
-namespace Serviço
+namespace AdegaZeRatao.Servico
 {
     public class CervejaServico
     {
@@ -12,11 +13,21 @@ namespace Serviço
             _cervejaRepositorio = new CervejaRepositorio();
         }
 
+        public IEnumerable<Cerveja> ListaCervejas()
+        {
+            return _cervejaRepositorio.ListaCerveja();
+        }
+        
         public string Salvar(Cerveja entidade)
         {
             if (entidade.Validar())
                 return "Categoria Inválida.";
             return "ok";
+        }
+
+        public string Excluir(Cerveja entidade)
+        {
+            return "";
         }
     }
 }

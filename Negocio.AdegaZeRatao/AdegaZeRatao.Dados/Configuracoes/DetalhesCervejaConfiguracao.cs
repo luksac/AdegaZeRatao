@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace AdegaZeRatao.Dados.Configuracoes
 {
-    class DetalhesCervejaConfiguracao : IEntityTypeConfiguration<DetalhesCervejaRepositorio>
+    class DetalhesCervejaConfiguracao : IEntityTypeConfiguration<DetalhesCerveja>
     {
-        public void Configure(EntityTypeBuilder<DetalhesCervejaRepositorio> builder)
+        public void Configure(EntityTypeBuilder<DetalhesCerveja> builder)
         {
             builder.ToTable("DetalhesCerveja");
 

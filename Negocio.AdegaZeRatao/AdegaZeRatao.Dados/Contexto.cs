@@ -19,7 +19,7 @@ namespace AdegaZeRatao.Dados
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Respostas> Respostas { get; set; }
         public DbSet<Questionario> Questionario { get; set; }
-        public DbSet<DetalhesCervejaRepositorio> DetalhesCerveja { get; set; }
+        public DbSet<DetalhesCerveja> DetalhesCerveja { get; set; }
         public DbSet<Cerveja> Cerveja { get; set; }
         //1. FIM
 

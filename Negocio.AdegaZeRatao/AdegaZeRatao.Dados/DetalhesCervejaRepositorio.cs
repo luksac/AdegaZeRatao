@@ -9,5 +9,9 @@ namespace AdegaZeRatao.Dados
 {
     public class DetalhesCervejaRepositorio : RepositorioBase<DetalhesCerveja>
     {
+        public IEnumerable<DetalhesCerveja> ListaDetalhesCerveja()
+        {
+            return ListarTodos();
+        }
     }
 }
