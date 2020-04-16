@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdegaZeRatao.Comum\AdegaZeRatao.Comum.csproj" />
+    <ProjectReference Include="..\AdegaZeRatao.Dados\AdegaZeRatao.Dados.csproj" />
+    <ProjectReference Include="..\AdegaZeRatao\AdegaZeRatao.csproj" />
+  </ItemGroup>
+
+</Project>
