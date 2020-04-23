@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
+using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 namespace AdegaZeRataoWebApi
 {
@@ -26,6 +23,25 @@ namespace AdegaZeRataoWebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            //services.AddControllers();
+            services.AddSwaggerGen(c => {
+
+                c.SwaggerDoc("v1",
+                    new OpenApiInfo
+                    {
+                        Title = "Adega Zé Ratão",
+                        Version = "v1",
+                        Description = "API REST criada com o ASP.NET Core 3.0 para atender aplicação Front-end.",
+                        Contact = new OpenApiContact
+                        {
+                            Name = "Lucas Araujo e Paulo Almeida",
+                            Url = new Uri("https://github.com/luksac/AdegaZeRatao")
+                        }
+                    });
+            });
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,8 +57,15 @@ namespace AdegaZeRataoWebApi
                 app.UseHsts();
             }
 
+            // Ativando middlewares para uso do Swagger
+            app.UseSwagger();
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Indicadores Econômicos V1");
+            });
+
             app.UseHttpsRedirection();
             app.UseMvc();
+
         }
     }
 }
