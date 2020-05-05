@@ -60,7 +60,7 @@ namespace AdegaZeRataoWebApi
             // Ativando middlewares para uso do Swagger
             app.UseSwagger();
             app.UseSwaggerUI(c => {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Indicadores Econômicos V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Adega Ze ratao");
             });
 
             app.UseHttpsRedirection();

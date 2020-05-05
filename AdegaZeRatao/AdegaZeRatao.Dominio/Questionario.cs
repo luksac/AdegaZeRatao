@@ -8,6 +8,6 @@ namespace AdegaZeRatao.Dominio
     {
         public int IdQuestionario { get; set; }
         public string Pergunta { get; set; }
-        public DateTime MyProperty { get; set; }
+        public DateTime DataHora { get; set; }
     }
 }

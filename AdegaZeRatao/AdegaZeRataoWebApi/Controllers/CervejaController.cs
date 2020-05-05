@@ -29,6 +29,11 @@ namespace AdegaZeRataoWebApi.Controllers
         //{
         //    return cervejaServico.ListarTodosComEstoqueZerado();
         //}
+        [HttpPut("Atualizar")]
+        public NotificationResult Atualizar(Cerveja entidade)
+        {
+            return cervejaServico.Atualizar(entidade);
+        }
 
         [HttpPost("Salvar")]
         public NotificationResult Salvar(Cerveja entidade)

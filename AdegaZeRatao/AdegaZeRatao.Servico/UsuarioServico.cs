@@ -1,23 +1,22 @@
-﻿using AdegaZeRatao.Dados.Configuracoes;
+﻿using AdegaZeRatao.Comum.NotificationPattern;
+using AdegaZeRatao.Dados;
 using AdegaZeRatao.Dominio;
 using System;
-using AdegaZeRatao.Servico;
-using AdegaZeRatao.Comum.NotificationPattern;
-using AdegaZeRatao.Dados;
 using System.Collections.Generic;
+using System.Text;
 
 namespace AdegaZeRatao.Servico
 {
-    public class CervejaServico
+    public class UsuarioServico
     {
-        private readonly CervejaRepositorio _cervejaRepositorio;
+        private readonly UsuarioRepositorio _usuarioRepositorio;
 
-        public CervejaServico()
+        public UsuarioServico()
         {
-            _cervejaRepositorio = new CervejaRepositorio();
+            _usuarioRepositorio = new UsuarioRepositorio();
         }
 
-        public NotificationResult Salvar(Cerveja entidade)
+        public NotificationResult Salvar(Usuario entidade)
         {
             var notificationResult = new NotificationResult();
 
@@ -34,8 +33,8 @@ namespace AdegaZeRatao.Servico
                 if (notificationResult.IsValid)
                 {
 
-                        _cervejaRepositorio.Adicionar(entidade);
-                 
+                    _usuarioRepositorio.Adicionar(entidade);
+
 
                     notificationResult.Add("Produto cadastrado com sucesso.");
                 }
@@ -51,7 +50,7 @@ namespace AdegaZeRatao.Servico
         }
 
 
-        public NotificationResult Atualizar(Cerveja entidade)
+        public NotificationResult Atualizar(Usuario entidade)
         {
             var notificationResult = new NotificationResult();
 
@@ -68,7 +67,7 @@ namespace AdegaZeRatao.Servico
                 if (notificationResult.IsValid)
                 {
 
-                        _cervejaRepositorio.Atualizar(entidade);
+                    _usuarioRepositorio.Atualizar(entidade);
 
                     notificationResult.Add("Produto cadastrado com sucesso.");
                 }
@@ -84,21 +83,22 @@ namespace AdegaZeRatao.Servico
         }
 
 
-        public string Excluir(Cerveja entidade)
+        public string Excluir(Usuario entidade)
         {
-            _cervejaRepositorio.Remover(entidade);
+            _usuarioRepositorio.Remover(entidade);
             return "Excluido";
         }
 
-        public IEnumerable<Cerveja> ListarTodos()
+        public IEnumerable<Usuario> ListarTodos()
         {
-            return _cervejaRepositorio.ListarTodos();
+            return _usuarioRepositorio.ListarTodos();
         }
 
-        public IEnumerable<Cerveja> ListarAtivos()
+        public IEnumerable<Usuario> ListarAtivos()
         {
-            return _cervejaRepositorio.ListarAtivos();
+            return _usuarioRepositorio.ListarAtivos();
         }
+
 
     }
 }

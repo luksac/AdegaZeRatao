@@ -15,8 +15,8 @@ namespace AdegaZeRatao.Dados.Configuracoes
             //builder.ToTable("Cerveja");
             builder.HasKey("IdQuestionario");
             //builder.Property(f => f.IdQuestionario).HasColumnName("idCerveja");
-            builder.Property(f => f.Pergunta).HasColumnName("IdDetalhes");
-            builder.Property(f => f.MyProperty).HasColumnName("Categoria");
+            builder.Property(f => f.Pergunta).HasColumnName("Pergunta");
+            builder.Property(f => f.DataHora).HasColumnName("DataHora");
 
         }
     }

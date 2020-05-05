@@ -12,9 +12,7 @@ namespace AdegaZeRatao.Dados.Configuracoes
         public void Configure(EntityTypeBuilder<Respostas> builder)
         {
             builder.ToTable("RESPOSTAS", "LUCAS_PAULOVICTOR");
-            //builder.ToTable("Cerveja");
             builder.HasKey("IdResposta");
-            //builder.Property(f => f.IdResposta).HasColumnName("idCerveja");
             builder.Property(f => f.IdQuestionario).HasColumnName("IdQuestionario");
             builder.Property(f => f.IdUsuario).HasColumnName("IdUsuario");
             builder.Property(f => f.DataHora).HasColumnName("DataHora");

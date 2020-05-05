@@ -9,5 +9,7 @@ namespace AdegaZeRatao.Dominio
         public string Tipo { get; set; }
         public int IdDetalhes { get; set; }
         public string Descricao { get; set; }
+
+
     }
 }
