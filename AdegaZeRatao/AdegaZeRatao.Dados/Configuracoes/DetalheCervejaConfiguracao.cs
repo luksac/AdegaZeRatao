@@ -18,6 +18,7 @@ namespace AdegaZeRatao.Dados.Configuracoes
             builder.Property(f => f.PrecoSugerido).HasColumnName("PrecoSugerido");
             builder.Property(f => f.ProdutoQuantidade).HasColumnName("ProdutoQuantidade");
             builder.Property(f => f.Ranking).HasColumnName("Ranking");
+            builder.Property(f => f.DescricaoDetalhe).HasColumnName("DescricaoDetalhe");
  
         }
     }

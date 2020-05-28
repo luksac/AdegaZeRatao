@@ -98,7 +98,15 @@ namespace AdegaZeRatao.Servico
         public IEnumerable<DetalhesCervejas> ListarAtivos()
         {
             return _detalhesCervejaRepositorio.ListarAtivos();
+            
         }
+
+        public DetalhesCervejas SelecionaPorId(int IdDetalhes)
+        {
+            return _detalhesCervejaRepositorio.Listar1(IdDetalhes);
+        }
+
+        
 
     }
 }

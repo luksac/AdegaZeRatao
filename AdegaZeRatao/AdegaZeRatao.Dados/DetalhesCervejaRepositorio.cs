@@ -1,5 +1,6 @@
 ﻿using AdegaZeRatao.Dados.Configuracoes;
 using AdegaZeRatao.Dominio;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,14 @@ namespace AdegaZeRatao.Dados
             //.Include(f => f.Marca)
 
         }
+
+        public DetalhesCervejas Listar1(int IdDetalhes)
+        {
+            return Contexto.DetalhesCervejas.Find(IdDetalhes);
+        }
+
+
+
 
     }
 }

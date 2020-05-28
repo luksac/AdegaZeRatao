@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AdegaZeRatao.Dominio;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,10 @@ namespace AdegaZeRatao.Dados.Configuracoes
              Entidade = Contexto.Set<T>();
          }
 
-         public T ListarUm(params object[] keys)
+         public T ListarUm(int keys)
          {
-             return Entidade.Find(keys);
+            return Entidade.Find(keys);
+            //return Entidade.Select(keys);
          }
 
          public List<T> ListarTodos()

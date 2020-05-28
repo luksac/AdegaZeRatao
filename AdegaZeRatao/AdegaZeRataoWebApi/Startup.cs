@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Net.NetworkInformation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.Options;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,6 +25,9 @@ namespace AdegaZeRataoWebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc(option => option.EnableEndpointRouting = false);
+           services.AddCors(option => option.AddPolicy(name: "Dominio", builder => { builder.WithOrigins("http://localhost:3000").AllowAnyOrigin(); }));
+            services.AddCors(option => option.AddPolicy(name: "Dominio2", builder => { builder.WithHeaders("Origin, X-Request-Width, Content-Type, Accept ").AllowAnyHeader(); }));
 
             //services.AddControllers();
             services.AddSwaggerGen(c => {
@@ -37,6 +42,7 @@ namespace AdegaZeRataoWebApi
                         {
                             Name = "Lucas Araujo e Paulo Almeida",
                             Url = new Uri("https://github.com/luksac/AdegaZeRatao")
+    
                         }
                     });
             });
@@ -56,15 +62,22 @@ namespace AdegaZeRataoWebApi
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
+            
             // Ativando middlewares para uso do Swagger
             app.UseSwagger();
             app.UseSwaggerUI(c => {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Adega Ze ratao");
             });
-
             app.UseHttpsRedirection();
+
+
             app.UseMvc();
+            app.UseCors(Option => Option.AllowAnyMethod());
+            app.UseCors(option => option.AllowCredentials());
+            app.UseCors(option => option.AllowAnyHeader());
+            app.UseCors(option => option.AllowAnyOrigin());
+            app.UseCors("Dominio");
+            
 
         }
     }

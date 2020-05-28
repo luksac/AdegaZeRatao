@@ -10,5 +10,6 @@ namespace AdegaZeRatao.Dominio
         public int Ranking { get; set; }
         public int ProdutoQuantidade { get; set; }
         public decimal PrecoSugerido { get; set; }
+        public string DescricaoDetalhe { get; set; }
     }
 }

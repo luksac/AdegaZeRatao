@@ -1,17 +1,23 @@
-﻿using AdegaZeRatao.Servico;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AdegaZeRatao.Comum.NotificationPattern;
 using AdegaZeRatao.Dominio;
+using AdegaZeRatao.Servico;
+using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Cors.Infrastructure;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Headers;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.Options;
 
 namespace AdegaZeRataoWebApi.Controllers
 {
+
     [ApiController]
     [Route("[controller]")]
+
     public class CervejaController : ControllerBase
     {
         private readonly CervejaServico cervejaServico;
@@ -21,8 +27,13 @@ namespace AdegaZeRataoWebApi.Controllers
             cervejaServico = new CervejaServico();
         }
 
+
+        [EnableCors("Dominio")]
         [HttpGet("ativos")]
-        public IEnumerable<Cerveja> Ativos() => cervejaServico.ListarAtivos();
+        public IEnumerable<Cerveja> Ativos() =>  cervejaServico.ListarAtivos();
+
+
+
 
         //[HttpGet("sem-estoque")]
         //public IEnumerable<Cerveja> ListarTodosComEstoqueZerado()
@@ -46,6 +57,7 @@ namespace AdegaZeRataoWebApi.Controllers
         {
             return cervejaServico.Excluir(entidade);
         }
+
 
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AdegaZeRatao.Dominio;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,8 @@ namespace AdegaZeRatao.Dados.Configuracoes
 
         public IEnumerable<Cerveja> ListarAtivos()
         {
+      
+
             return Contexto
                 .Cerveja
                 //.Include(f => f.Marca)
