@@ -26,9 +26,9 @@ namespace AdegaZeRataoWebApi
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddMvc(option => option.EnableEndpointRouting = false);
-           services.AddCors(option => option.AddPolicy(name: "Dominio", builder => { builder.WithOrigins("http://localhost:3000").AllowAnyOrigin(); }));
+            services.AddCors(option => option.AddPolicy(name: "Dominio", builder => { builder.WithOrigins("http://localhost:3000").AllowAnyOrigin(); }));
             services.AddCors(option => option.AddPolicy(name: "Dominio2", builder => { builder.WithHeaders("Origin, X-Request-Width, Content-Type, Accept ").AllowAnyHeader(); }));
-
+            services.AddCors(option => option.AddPolicy(name: "Dominio3", builder => { builder.WithOrigins("http://localhost:3000").AllowAnyOrigin(); { builder.WithHeaders("Origin, X-Request-Width, Content-Type, Accept ").AllowAnyHeader(); } }));
             //services.AddControllers();
             services.AddSwaggerGen(c => {
 
@@ -77,6 +77,8 @@ namespace AdegaZeRataoWebApi
             app.UseCors(option => option.AllowAnyHeader());
             app.UseCors(option => option.AllowAnyOrigin());
             app.UseCors("Dominio");
+            app.UseCors("Dominio2");
+            app.UseCors("Dominio3");
             
 
         }
