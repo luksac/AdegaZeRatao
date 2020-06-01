@@ -39,7 +39,8 @@ namespace AdegaZeRataoWebApi.Controllers
         {
             return cervejaServico.Atualizar(entidade);
         }
-
+        
+        [EnableCors("Dominio3")]
         [HttpPost("Salvar")]
         public NotificationResult Salvar(Cerveja entidade)
         {
