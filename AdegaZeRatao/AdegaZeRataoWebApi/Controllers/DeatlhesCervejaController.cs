@@ -17,7 +17,7 @@ namespace AdegaZeRataoWebApi.Controllers
     
     [ApiController]
     [Route("[controller]")]
-
+    [AutenticacaoBasica]
     public class DeatlhesCervejaController : ControllerBase
     {
         private readonly DetalhesCervejaServico datelhesCervejasServico;
@@ -37,11 +37,6 @@ namespace AdegaZeRataoWebApi.Controllers
         public DetalhesCervejas SelecionaPorId(int IdDetalhe) => datelhesCervejasServico.SelecionaPorId(IdDetalhe);
       
 
-        //[HttpGet("sem-estoque")]
-        //public IEnumerable<Cerveja> ListarTodosComEstoqueZerado()
-        //{
-        //    return cervejaServico.ListarTodosComEstoqueZerado();
-        //}
         [HttpPut("Atualizar")]
         public NotificationResult Atualizar(DetalhesCervejas entidade)
         {

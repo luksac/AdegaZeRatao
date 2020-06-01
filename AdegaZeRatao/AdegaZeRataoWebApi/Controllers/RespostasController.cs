@@ -11,6 +11,7 @@ namespace AdegaZeRataoWebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [AutenticacaoBasica]
     public class RespostasController : ControllerBase
     {
 
@@ -24,11 +25,6 @@ namespace AdegaZeRataoWebApi.Controllers
         [HttpGet("ativos")]
         public IEnumerable<Respostas> Ativos() => respostasServico.ListarAtivos();
 
-        //[HttpGet("sem-estoque")]
-        //public IEnumerable<Cerveja> ListarTodosComEstoqueZerado()
-        //{
-        //    return cervejaServico.ListarTodosComEstoqueZerado();
-        //}
         [HttpPut("Atualizar")]
         public NotificationResult Atualizar(Respostas entidade)
         {

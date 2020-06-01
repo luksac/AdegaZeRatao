@@ -17,7 +17,7 @@ namespace AdegaZeRataoWebApi.Controllers
 
     [ApiController]
     [Route("[controller]")]
-
+    [AutenticacaoBasica]
     public class CervejaController : ControllerBase
     {
         private readonly CervejaServico cervejaServico;
@@ -30,16 +30,10 @@ namespace AdegaZeRataoWebApi.Controllers
 
         [EnableCors("Dominio")]
         [HttpGet("ativos")]
+        
         public IEnumerable<Cerveja> Ativos() =>  cervejaServico.ListarAtivos();
 
 
-
-
-        //[HttpGet("sem-estoque")]
-        //public IEnumerable<Cerveja> ListarTodosComEstoqueZerado()
-        //{
-        //    return cervejaServico.ListarTodosComEstoqueZerado();
-        //}
         [HttpPut("Atualizar")]
         public NotificationResult Atualizar(Cerveja entidade)
         {

@@ -29,7 +29,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdegaZeRataoWebApi", "Adega
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testes", "Testes", "{08EF70BC-A1B9-4470-B80D-E12477B56C20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestAdega", "XUnitTestAdega\XUnitTestAdega.csproj", "{05B89ADC-1B87-42C0-9B23-C82541412134}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitTestAdega", "XUnitTestAdega\XUnitTestAdega.csproj", "{05B89ADC-1B87-42C0-9B23-C82541412134}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
