@@ -17,7 +17,7 @@ namespace AdegaZeRataoWebApi.Controllers
     
     [ApiController]
     [Route("[controller]")]
-    [AutenticacaoBasica]
+    //[AutenticacaoBasica]
     public class DeatlhesCervejaController : ControllerBase
     {
         private readonly DetalhesCervejaServico datelhesCervejasServico;

@@ -13,7 +13,7 @@ namespace AdegaZeRataoWebApi.Controllers
     [ApiController]
     public class AutenticadorController : ControllerBase
     {
-        [HttpGet("Token")]
+        [HttpPost("Token")]
         public dynamic Token(Credenciais credenciais)
         {
             try

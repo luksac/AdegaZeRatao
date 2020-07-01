@@ -17,6 +17,7 @@ namespace AdegaZeRatao.Dados
         public DbSet<Respostas> Respostas { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
 
+        public DbSet<Avaliacao> Avaliacao { get; set; }
         //1. FIM
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -34,6 +35,7 @@ namespace AdegaZeRatao.Dados
             modelBuilder.ApplyConfiguration(new QuestionarioConfiguracao());
             modelBuilder.ApplyConfiguration(new RespostasConfiguracoes());
             modelBuilder.ApplyConfiguration(new UsuarioConfiguracao());
+            modelBuilder.ApplyConfiguration(new AvaliacaoConfiguracao());
             //2. FIM
         }
 

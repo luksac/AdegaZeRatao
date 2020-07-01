@@ -16,7 +16,7 @@ namespace AdegaZeRatao.Dados.Configuracoes
             //builder.ToTable("Cerveja");
             builder.HasKey("IdCerveja");
 
-            builder.HasOne(b => b.Detalhes).WithMany().HasForeignKey(f => f.IdDetalhes);
+            //builder.HasOne(b => b.Detalhes).WithMany().HasForeignKey(f => f.IdDetalhes);
             
 
             builder.Property(f => f.IdDetalhes).HasColumnName("IdDetalhes");

@@ -14,7 +14,7 @@ namespace AdegaZeRatao.Dominio
         public int IdDetalhes { get; set; }
         public string Descricao { get; set; }   
 
-        public DetalhesCervejas Detalhes { get; set; }
+        //public DetalhesCervejas Detalhes { get; set; }
         public string Foto { get; set; }
 
 
