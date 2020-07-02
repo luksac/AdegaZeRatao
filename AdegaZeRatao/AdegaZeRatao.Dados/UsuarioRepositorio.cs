@@ -2,6 +2,7 @@
 using AdegaZeRatao.Dominio;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace AdegaZeRatao.Dados
@@ -21,6 +22,12 @@ namespace AdegaZeRatao.Dados
                 .Usuario;
                 //.Include(f => f.Marca)
                 
+        }
+
+        public IEnumerable<Usuario> ListarEmail(string email)
+        {
+            return Contexto.Usuario.Where(s => s.Email == email).ToList();
+
         }
     }
 }

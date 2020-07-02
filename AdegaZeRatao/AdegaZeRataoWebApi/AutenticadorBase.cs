@@ -66,9 +66,9 @@ namespace AdegaZeRataoWebApi
 
         public bool EstaAutenticado(AuthorizationFilterContext context, Credenciais credenciais)
         {
-            
-            System.DateTime tempoExpiracao = new System.DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, (DateTime.Now.Minute - Convert.ToInt32(FuncoesUteis.Get("Expiracao"))), DateTime.Now.Second);
-            return credenciais.UserName == FuncoesUteis.Get("Usuario") && credenciais.Senha == FuncoesUteis.Get("Senha") && credenciais.Data > tempoExpiracao;
+
+            //System.DateTime tempoExpiracao = new System.DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, (DateTime.Now.Minute - Convert.ToInt32(FuncoesUteis.Get("Expiracao"))), DateTime.Now.Second);
+            return credenciais.UserName == FuncoesUteis.Get("Usuario") && credenciais.Senha == FuncoesUteis.Get("Senha"); //&& credenciais.Data > tempoExpiracao;
         }
 
         private void NaoAutorizadoResult(AuthorizationFilterContext context)

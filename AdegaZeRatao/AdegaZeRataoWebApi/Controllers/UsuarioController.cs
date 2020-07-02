@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AdegaZeRatao.Comum.NotificationPattern;
 using AdegaZeRatao.Dominio;
 using AdegaZeRatao.Servico;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AdegaZeRataoWebApi.Controllers
@@ -30,8 +31,9 @@ namespace AdegaZeRataoWebApi.Controllers
             return usuarioServico.Atualizar(entidade);
         }
 
+        [EnableCors("Dominio")]
         [HttpPost("Salvar")]
-        public NotificationResult Salvar(Usuario entidade)
+        public dynamic Salvar(Usuario entidade)
         {
             return usuarioServico.Salvar(entidade);
         }
@@ -40,6 +42,13 @@ namespace AdegaZeRataoWebApi.Controllers
         public string Excluir(Usuario entidade)
         {
             return usuarioServico.Excluir(entidade);
+        }
+
+        [EnableCors("Dominio")]
+        [HttpPost("Valida")]
+        public dynamic Valida(Usuario entidade)
+        {
+            return usuarioServico.Validar(entidade);
         }
 
     }

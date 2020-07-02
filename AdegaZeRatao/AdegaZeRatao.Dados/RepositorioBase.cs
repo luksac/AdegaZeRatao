@@ -49,6 +49,22 @@ namespace AdegaZeRatao.Dados.Configuracoes
              Contexto.SaveChanges();
          }
 
+        public string Validar(Usuario entidade)
+        {
+          
+             if(Entidade.Find(entidade.Email) !=null && Entidade.Find(entidade.Senha) != null)
+             {
+                return "OK";
+             }
+            else
+            {
+                return "Tente Novamente";
+            }
+
+        }
+
+
+
     }
     
 }
