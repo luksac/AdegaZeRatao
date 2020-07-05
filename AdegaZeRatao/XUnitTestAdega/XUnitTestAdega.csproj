@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.0" />
+    <Compile Remove="UnitTest1.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="5.10.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
     <PackageReference Include="xunit" Version="2.4.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
@@ -15,8 +20,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AdegaZeRatao.Dominio\AdegaZeRatao.Dominio.csproj" />
-    <ProjectReference Include="..\AdegaZeRatao.Servico\AdegaZeRatao.Servico.csproj" />
+    <ProjectReference Include="..\AdegaZeRatao.Comum\AdegaZeRatao.Comum.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="AdegaZeRatao.Dominio">
+      <HintPath>..\AdegaZeRatao.Dominio\obj\Debug\netcoreapp3.1\AdegaZeRatao.Dominio.dll</HintPath>
+    </Reference>
+    <Reference Include="AdegaZeRatao.Servico">
+      <HintPath>..\AdegaZeRatao.Servico\obj\Debug\netcoreapp3.1\AdegaZeRatao.Servico.dll</HintPath>
+    </Reference>
+    <Reference Include="AdegaZeRataoWebApi">
+      <HintPath>..\AdegaZeRataoWebApi\bin\Debug\netcoreapp3.1\AdegaZeRataoWebApi.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
